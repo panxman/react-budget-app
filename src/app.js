@@ -7,8 +7,6 @@ import AppRouter from "./routers/AppRouter";
 // Store
 import configureStore from "./store/configureStore";
 import { addExpense } from "./actions/expenses";
-import { setTextFilter } from "./actions/filters";
-import getVisibleExpenses from "./selectors/expenses";
 // Styles
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
