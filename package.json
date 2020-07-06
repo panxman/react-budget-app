@@ -20,7 +20,7 @@
     "build": "webpack",
     "server": "live-server public/",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest --config=jest.config.json"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -30,9 +30,13 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "css-loader": "^3.6.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^26.1.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
+    "raf": "^3.4.1",
+    "react-test-renderer": "^16.13.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
