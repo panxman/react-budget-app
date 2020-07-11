@@ -14,6 +14,7 @@ export default class ExpenseForm extends React.Component {
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
       error: "",
+      buttonText: props.expense ? "Edit Expense" : "Add Expense",
     };
   }  
   onAmountChange = (e) => {
@@ -88,7 +89,7 @@ export default class ExpenseForm extends React.Component {
             value={this.state.note}
             onChange={this.onNoteChange}
           ></textarea>
-          <button>Add Expense</button>
+          <button>{this.state.buttonText}</button>
         </form>
       </div>
     );
