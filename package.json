@@ -17,7 +17,8 @@
     "uuid": "^8.2.0"
   },
   "scripts": {
-    "build": "webpack",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "server": "live-server public/",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
@@ -33,6 +34,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "jest": "^26.1.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
