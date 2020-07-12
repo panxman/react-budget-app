@@ -5,7 +5,7 @@
   "author": "panxman",
   "license": "MIT",
   "dependencies": {
-    "live-server": "^1.2.1",
+    "express": "^4.17.1",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-dates": "^21.8.0",
@@ -19,7 +19,7 @@
   "scripts": {
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "server": "live-server public/",
+    "start": "node server/server.js",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
   },
