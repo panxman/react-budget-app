@@ -7,6 +7,8 @@ import AppRouter from "./routers/AppRouter";
 // Store
 import configureStore from "./store/configureStore";
 import "./firebase/firebase";
+// Actions
+import { startSetExpenses } from "./actions/expenses";
 // Styles
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
@@ -23,4 +25,8 @@ const jsx = (
 );
 
 /* Render */
-ReactDOM.render(jsx, document.querySelector("#app"));
+ReactDOM.render(<p>Loading...</p>, document.querySelector("#app"));
+
+store.dispatch(startSetExpenses()).then(() => {
+    ReactDOM.render(jsx, document.querySelector("#app"));
+});
