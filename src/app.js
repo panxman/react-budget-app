@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 // Store
 import configureStore from "./store/configureStore";
-import "./firebase/firebase";
+import { firebase } from "./firebase/firebase";
 // Actions
 import { startSetExpenses } from "./actions/expenses";
 // Styles
@@ -29,4 +29,15 @@ ReactDOM.render(<p>Loading...</p>, document.querySelector("#app"));
 
 store.dispatch(startSetExpenses()).then(() => {
     ReactDOM.render(jsx, document.querySelector("#app"));
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+    // Login
+    if (user) {
+        console.log("Log in");
+    }
+    // Logout
+    else {
+        console.log("Log out");
+    }
 });
