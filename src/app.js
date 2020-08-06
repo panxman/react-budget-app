@@ -9,6 +9,7 @@ import configureStore from "./store/configureStore";
 import { firebase } from "./firebase/firebase";
 // Actions
 import { startSetExpenses } from "./actions/expenses";
+import { login, logout } from "./actions/auth";
 // Styles
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
@@ -24,6 +25,7 @@ const jsx = (
   </div>
 );
 
+/* Render */
 let hasRendered = false;
 const renderApp = () => {
   if (!hasRendered) {
@@ -32,13 +34,13 @@ const renderApp = () => {
   }
 };
 
-/* Render */
 ReactDOM.render(<p>Loading...</p>, document.querySelector("#app"));
 
 /* Authentication Redirections */
 firebase.auth().onAuthStateChanged((user) => {
   // Login
   if (user) {
+    store.dispatch(login(user.uid));
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();
 
@@ -49,6 +51,7 @@ firebase.auth().onAuthStateChanged((user) => {
   }
   // Logout
   else {
+    store.dispatch(logout());
     renderApp();
     history.push("/");
   }
