@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 // Components
 import AppRouter, { history } from "./routers/AppRouter";
+import LoadingPage from "./components/LoadingPage";
 // Store
 import configureStore from "./store/configureStore";
 import { firebase } from "./firebase/firebase";
@@ -34,7 +35,7 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.querySelector("#app"));
+ReactDOM.render(<LoadingPage />, document.querySelector("#app"));
 
 /* Authentication Redirections */
 firebase.auth().onAuthStateChanged((user) => {
